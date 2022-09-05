@@ -4,6 +4,7 @@ const playBtn = document.getElementById('init-btn');
 const squareContainer = document.getElementById('squares-container');
 let randomNumbers = [];
 let userNumbers;
+let userArray = [];
 
 playBtn.addEventListener('click',
     function () {
@@ -36,5 +37,12 @@ function removeNumbers() {
 
 // funzione per chiedere i numeri all'utente
 function askNumbers() {
-    userNumbers = parseInt(prompt('Inserisci i numeri che ricordi'));
+    for (let index = 0; index < 5; index++) {
+        userNumbers = parseInt(prompt('Inserisci i numeri che ricordi'));
+        userArray.push(userNumbers);
+        console.log(userArray);
+    }
 }
+
+
+
