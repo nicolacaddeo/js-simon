@@ -5,3 +5,14 @@ header {
     background-color: #f2f2f2;
     padding: 10px;
 }
+
+main {
+    padding-top: 15vh;
+}
+
+.nc-num-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+    border: 1px solid black;
+}
