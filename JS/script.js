@@ -3,6 +3,7 @@
 const playBtn = document.getElementById('init-btn');
 const squareContainer = document.getElementById('squares-container');
 let randomNumbers = [];
+let userNumbers;
 
 playBtn.addEventListener('click',
     function () {
@@ -22,13 +23,18 @@ playBtn.addEventListener('click',
             squareContainer.append(square);
         }
 
-        setTimeout(removeNumbers, 30 * 1000);
+        setTimeout(removeNumbers, 5 * 1000);
+        setTimeout(askNumbers, 6000);
     }
 );
+
 
 // funzione per far scomparire i numeri
 function removeNumbers() {
     squareContainer.innerHTML = '';
 }
 
-
+// funzione per chiedere i numeri all'utente
+function askNumbers() {
+    userNumbers = parseInt(prompt('Inserisci i numeri che ricordi'));
+}
