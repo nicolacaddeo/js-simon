@@ -21,7 +21,14 @@ playBtn.addEventListener('click',
             square.innerHTML = number;
             squareContainer.append(square);
         }
+
+        setTimeout(removeNumbers, 30 * 1000);
     }
 );
+
+// funzione per far scomparire i numeri
+function removeNumbers() {
+    squareContainer.innerHTML = '';
+}
 
 
