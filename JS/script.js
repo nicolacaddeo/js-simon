@@ -3,6 +3,8 @@ const playBtn = document.getElementById('init-btn');
 const squareContainer = document.getElementById('squares-container');
 const checkBtn = document.getElementById('check-nums');
 let userNumbers;
+let rightNumbers;
+
 
 // arrays
 let userArray = [];
@@ -26,15 +28,24 @@ playBtn.addEventListener('click',
 
         console.log(randomNumbers);
         setTimeout(removeNumbers, 5 * 1000);
-        setTimeout(askNumbers, 6 * 1000);
+        setTimeout(askCheckUserNum, 6 * 1000);
     }
 );
 
-checkBtn.addEventListener('click',
-    function () {
-        checkNumbers(randomNumbers, userArray);
+
+function askCheckUserNum() {
+    const userArray = askNumbers();
+    rightNumbers = 0
+    for (let i = 0; i < userArray.length; i++) {
+        const userNumber = userArray[i];
+        if (randomNumbers.includes(userNumber)) {
+            console.log('Hai indovinato il numero', userNumber);
+            rightNumbers++
+        }
     }
-);
+    console.log(`Hai indovinato ${rightNumbers} numeri`);
+
+}
 
 // funzione per far scomparire i numeri
 function removeNumbers() {
@@ -48,16 +59,9 @@ function askNumbers() {
         userArray.push(userNumbers);
     }
     console.log(userArray);
+    return userArray;
 }
 
-// funzione per controllare i numeri dell'utente
-function checkNumbers(arr1, arr2) {
-    if (arr1.sort().join('|') === arr2.sort().join('|')) {
-        console.log('Hai vinto');
-    } else {
-        console.log('Hai perso');
-    }
-}
 
 
 
