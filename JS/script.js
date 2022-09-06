@@ -1,11 +1,12 @@
-// sul click del bottone vengono generati 5 numeri
-
+// variabili
 const playBtn = document.getElementById('init-btn');
 const squareContainer = document.getElementById('squares-container');
 const checkBtn = document.getElementById('check-nums');
-let randomNumbers = [];
 let userNumbers;
+
+// arrays
 let userArray = [];
+let randomNumbers = [];
 
 playBtn.addEventListener('click',
     function () {
@@ -52,12 +53,12 @@ function askNumbers() {
 
 // funzione per controllare i numeri dell'utente
 function checkNumbers(arr1, arr2) {
-    if (arr1 === arr2) {
-        console.log('Hai vinto!');
-
+    if (arr1.sort().join('|') === arr2.sort().join('|')) {
+        console.log('Hai vinto');
     } else {
         console.log('Hai perso');
     }
 }
+
 
 
