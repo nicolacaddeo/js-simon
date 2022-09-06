@@ -16,8 +16,6 @@ playBtn.addEventListener('click',
         for (let index = 0; index < 5; index++) {
             let number = Math.floor(Math.random() * 100);
             randomNumbers.push(number);
-            console.log(number);
-            console.log(randomNumbers);
 
             // mando a schermo i numeri
             const square = document.createElement('div');
@@ -26,6 +24,7 @@ playBtn.addEventListener('click',
             squareContainer.append(square);
         }
 
+        console.log(randomNumbers);
         setTimeout(removeNumbers, 5 * 1000);
         setTimeout(askNumbers, 6 * 1000);
     }
@@ -59,6 +58,8 @@ function checkNumbers(arr1, arr2) {
         console.log('Hai perso');
     }
 }
+
+
 
 
 
